@@ -191,12 +191,6 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements S
         mLiveDisplay.setOnPreferenceChangeListener(this);
 
         mDisplayTemperature = (DisplayTemperature) findPreference(KEY_LIVE_DISPLAY_TEMPERATURE);
-        if (isNightDisplayAvailable) {
-            if (!mConfig.hasFeature(MODE_OUTDOOR)) {
-                liveDisplayPrefs.removePreference(mLiveDisplay);
-            }
-            liveDisplayPrefs.removePreference(mDisplayTemperature);
-        }
 
         mColorProfile = (ListPreference) findPreference(KEY_LIVE_DISPLAY_COLOR_PROFILE);
         if (liveDisplayPrefs != null && mColorProfile != null
